@@ -41,7 +41,7 @@ Else{
            Write-S3Object -BucketName <Bucketname> -Key domainnames.txt -File $destination
            $i=0
          
-           Add-Computer -DomainName abc.com -NewName $PATTERN -Credential $mycreds -Restart
+           Add-Computer -DomainName abc@def.com -NewName $PATTERN -Credential $mycreds -Restart
            
         }
     }
