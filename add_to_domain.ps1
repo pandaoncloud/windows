@@ -25,10 +25,10 @@ Else{
     {
         If ($i -lt 10 )
         {
-        $PATTERN = "HZNWINDOTNET0$i"
+        $PATTERN = "ABNWINDOTNET0$i"
         }
         Else{
-        $PATTERN = "HZNWINDOTNET$i"
+        $PATTERN = "ABNWINDOTNET$i"
         }
 
         If (select-string -path $destination -Pattern $PATTERN ){
@@ -38,10 +38,10 @@ Else{
 
            Add-Content $destination `n
            Add-Content $destination `n$PATTERN
-           Write-S3Object -BucketName integrationtrck2cloud -Key domainnames.txt -File $destination
+           Write-S3Object -BucketName <Bucketname> -Key domainnames.txt -File $destination
            $i=0
          
-           Add-Computer -DomainName neo-diageo.com -NewName $PATTERN -Credential $mycreds -Restart
+           Add-Computer -DomainName abc.com -NewName $PATTERN -Credential $mycreds -Restart
            
         }
     }
